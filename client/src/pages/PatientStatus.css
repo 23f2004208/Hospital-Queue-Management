@@ -1,0 +1,219 @@
+.status-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--light), var(--lighter));
+  padding: 20px;
+}
+
+.status-header {
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+.status-header h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+}
+
+.status-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.status-card,
+.instructions-card,
+.error-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.token-display {
+  text-align: center;
+  padding: 32px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.token-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.token-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 4px;
+}
+
+.patient-info {
+  margin-bottom: 32px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--lighter);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row .label {
+  font-weight: 600;
+  color: #666;
+}
+
+.info-row .value {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.queue-info {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.position-display {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.position-label {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.position-value {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.wait-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.time-value {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.status-message {
+  text-align: center;
+  padding: 32px;
+  border-radius: 12px;
+}
+
+.status-message h3 {
+  font-size: 1.75rem;
+  margin-bottom: 12px;
+}
+
+.status-message.in-progress {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-message.completed {
+  background: #e8f5e9;
+  color: var(--success);
+}
+
+.status-message.skipped {
+  background: #fff3e0;
+  color: var(--warning);
+}
+
+.arrival-info {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.instructions-card h3 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.instructions-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions-card li {
+  padding: 12px 0;
+  padding-left: 32px;
+  position: relative;
+  color: #666;
+  line-height: 1.6;
+}
+
+.instructions-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.error-card {
+  text-align: center;
+  padding: 60px 32px;
+}
+
+.error-card h2 {
+  color: var(--error);
+  margin-bottom: 16px;
+}
+
+.error-card p {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .status-page {
+    padding: 16px;
+  }
+
+  .status-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .status-card,
+  .instructions-card {
+    padding: 20px;
+  }
+
+  .token-value {
+    font-size: 2.5rem;
+  }
+
+  .position-value {
+    font-size: 3rem;
+  }
+}

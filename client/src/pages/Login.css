@@ -1,0 +1,92 @@
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-header h1 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.login-form {
+  margin-bottom: 24px;
+}
+
+.btn-login {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 14px;
+  margin-top: 8px;
+}
+
+.login-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--lighter);
+}
+
+.back-home {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-home:hover {
+  color: var(--secondary);
+}
+
+.demo-credentials {
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.demo-credentials p {
+  margin: 4px 0;
+  color: #666;
+}
+
+.demo-credentials strong {
+  color: var(--primary);
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-header h1 {
+    font-size: 1.5rem;
+  }
+}

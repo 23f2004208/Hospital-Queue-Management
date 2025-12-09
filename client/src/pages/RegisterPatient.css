@@ -1,0 +1,170 @@
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--light), var(--lighter));
+  padding: 20px;
+}
+
+.register-header {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+}
+
+.back-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-4px);
+}
+
+.register-header h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+}
+
+.register-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.register-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.priority-options {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.priority-option {
+  flex: 1;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.priority-option input[type="radio"] {
+  display: none;
+}
+
+.priority-option span {
+  display: block;
+  padding: 12px;
+  border: 2px solid var(--lighter);
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.priority-option input[type="radio"]:checked + span {
+  border-color: var(--primary);
+  background-color: var(--light);
+  transform: scale(1.05);
+}
+
+.priority-option:hover span {
+  border-color: var(--secondary);
+}
+
+.btn-register {
+  width: 100%;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  padding: 16px;
+}
+
+.info-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card li {
+  padding: 8px 0;
+  color: #666;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 24px;
+}
+
+.info-card li:before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .register-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-page {
+    padding: 16px;
+  }
+
+  .register-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .register-card {
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .priority-options {
+    flex-direction: column;
+  }
+
+  .priority-option {
+    min-width: 100%;
+  }
+}
