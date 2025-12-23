@@ -51,7 +51,16 @@ CLIENT_URL=https://hospital-queue-management.onrender.com
 3. Your app will be live at the provided URL!
 
 ### Step 5: Seed Database (One-time)
-After first deployment, run the seed script:
+
+**Option A: Run Locally (Recommended for Free Tier)**
+Since shell access requires a paid plan, seed the database from your local machine:
+```bash
+node server/seed.js
+```
+This will connect to your MongoDB and create the initial users.
+
+**Option B: Shell Access (Paid Plan Only)**
+If you have a paid Render plan:
 1. Go to your Render dashboard
 2. Click on your service
 3. Go to **"Shell"** tab
