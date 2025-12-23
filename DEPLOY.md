@@ -28,8 +28,8 @@ git push -u origin main
 - Branch: `main`
 
 **Build & Deploy:**
-- Build Command: `npm install && npm run build`
-- Start Command: `npm start`
+- Build Command: chmod +x build.sh && ./build.sh
+- Start Command: npm start
 
 **Environment Variables:**
 Click **"Add Environment Variable"** for each:
