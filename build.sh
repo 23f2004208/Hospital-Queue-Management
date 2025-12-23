@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e  # Exit on any error
 
 # Build script for Render deployment
 echo "Starting build process..."
@@ -12,28 +13,31 @@ echo "Installing client dependencies..."
 cd client
 
 echo "Current directory: $(pwd)"
-echo "Files in current directory:"
+echo "Files before npm install:"
 ls -la
 
+echo "Installing client packages..."
 npm install
 
-echo "Running Vite build..."
-npm run build 2>&1 | tee build.log
+echo "Files after npm install:"
+ls -la
 
-echo "After build - checking for dist folder:"
+echo "Running Vite build..."
+NODE_ENV=production npm run build
+
+echo "Build completed. Checking output:"
 ls -la
 
 # Verify build output
 echo "Verifying build output..."
-if [ -f "dist/index.html" ]; then
-    echo "Build successful - index.html found"
+if [ -d "dist" ] && [ -f "dist/index.html" ]; then
+    echo "Build successful - dist folder and index.html found"
+    echo "Contents of dist:"
     ls -la dist/
 else
-    echo "ERROR: Build failed - index.html not found"
-    echo "Build log:"
-    cat build.log
-    echo "Contents of current directory:"
-    ls -laR
+    echo "ERROR: Build failed - dist folder or index.html not found"
+    echo "Current directory contents:"
+    ls -la
     exit 1
 fi
 
