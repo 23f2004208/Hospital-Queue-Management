@@ -6,24 +6,22 @@ echo "Starting build process..."
 
 # Install root dependencies
 echo "Installing server dependencies..."
-npm install
+npm install --production=false
 
 # Install client dependencies and build
 echo "Installing client dependencies..."
 cd client
 
 echo "Current directory: $(pwd)"
-echo "Files before npm install:"
-ls -la
 
-echo "Installing client packages..."
-npm install
+echo "Installing client packages (including dev dependencies)..."
+npm install --include=dev
 
 echo "Files after npm install:"
 ls -la
 
 echo "Running Vite build..."
-NODE_ENV=production npm run build
+npm run build
 
 echo "Build completed. Checking output:"
 ls -la
